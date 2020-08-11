@@ -7,3 +7,6 @@ A new Flutter project.
 ## Technology stack and techniques used in project
 * Sqlite
 * Path Provider
+
+## Documentation
+*  [Http](https://pub.dev/documentation/http/latest/)
