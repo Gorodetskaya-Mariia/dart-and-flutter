@@ -10,3 +10,5 @@ A new Flutter project.
 
 ## Documentation
 *  [Http](https://pub.dev/documentation/http/latest/)
+
+![Data flow in News](news.png)
