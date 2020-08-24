@@ -4,9 +4,19 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'dart:async';
 import '../models/item_model.dart';
+import 'repository.dart';
 
-class NewsDbProvider {
+class NewsDbProvider implements Source, Cache {
   Database db; //from package:sqflite/sqflite.dart, it is a link to database
+
+  NewsDbProvider() {
+    init();
+  }
+
+  // Todo store and fetch top ids
+  Future<List<int>> fetchTopIds() {
+    return null;
+  }
 
   init() async {
     Directory documentsDirectory =
@@ -57,3 +67,5 @@ class NewsDbProvider {
     return db.insert("Items", item.toMapForDb());
   }
 }
+
+final newsDbProvider = NewsDbProvider();
