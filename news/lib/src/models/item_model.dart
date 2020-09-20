@@ -17,18 +17,19 @@ class ItemModel {
 
   ItemModel.fromJson(Map<String, dynamic> parsedJson)
       : id = parsedJson['id'],
-        deleted = parsedJson['deleted'] == 1,
+        deleted = parsedJson['deleted'] == 1 ?? false,
         type = parsedJson['type'],
         by = parsedJson['by'],
         time = parsedJson['time'],
-        text = parsedJson['text'],
-        dead = parsedJson['dead'] == 1,
+        text = parsedJson['text'] ?? '',
+        dead = parsedJson['dead'] == 1 ?? false,
         parent = parsedJson['parent'],
-        kids = jsonDecode(parsedJson['kids']),
+        kids = jsonDecode(parsedJson['kids']) ?? [],
         url = parsedJson['url'],
-        score = parsedJson['score'],
+        score = parsedJson['score'] ?? 0,
         title = parsedJson['title'],
-        descendants = parsedJson['descendants'];
+        descendants = parsedJson['descendants'] ?? 0;
+  // ?? set default property
 
   Map<String, dynamic> toMapForDb() {
     return <String, dynamic>{
@@ -44,6 +45,7 @@ class ItemModel {
       "dead": dead ? 1 : 0,
       "deleted": deleted ? 1 : 0,
       "kids": jsonEncode(kids),
+      "score": score,
     };
   }
 }
