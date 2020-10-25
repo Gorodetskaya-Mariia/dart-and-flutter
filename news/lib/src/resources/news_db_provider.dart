@@ -22,7 +22,7 @@ class NewsDbProvider implements Source, Cache {
     Directory documentsDirectory =
         await getApplicationDocumentsDirectory(); //reference to the directory where we store files
     final path =
-        join(documentsDirectory.path, "items.db"); //reference to the db
+        join(documentsDirectory.path, "items8.db"); //reference to the db
     // the mode to reset the database is change name of database (items.db -> items1.db)
     db = await openDatabase(
         //open existing db or create new db by onCreate method
