@@ -1,6 +1,6 @@
 # news
 
-A new Flutter project.
+The application displays news and comments for the news by using data from "Hacker News API".
 
 - [Hacker News API](https://github.com/hackernews/api)
 
